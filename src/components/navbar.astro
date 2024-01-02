@@ -1,0 +1,39 @@
+---
+const pages: { [key: string]: string } = {
+  "/": "Home",
+  "/projects": "Projects",
+  "/experience": "Experience",
+  "/about": "About",
+};
+console.log(Astro.url.pathname);
+---
+
+<header class="text-center">
+  <a href="/">
+    <h1 class="font-bold text-4xl">Ashley Chan</h1>
+  </a>
+
+  <ul class="flex flex-wrap items-center space-x-8 py-5">
+    {
+      Object.keys(pages).map((pg) => {
+        if (Astro.url.pathname === pg) {
+          return (
+            <li>
+              <a class="active font-semibold text-lg" href="#">
+                {pages[pg]}
+              </a>
+            </li>
+          );
+        } else {
+          return (
+            <li>
+              <a class="text-lg" href={pg}>
+                {pages[pg]}
+              </a>
+            </li>
+          );
+        }
+      })
+    }
+  </ul>
+</header>
