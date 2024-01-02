@@ -5,21 +5,20 @@ const pages: { [key: string]: string } = {
   "/experience": "Experience",
   "/about": "About",
 };
-console.log(Astro.url.pathname);
 ---
 
 <header class="text-center">
   <a href="/">
-    <h1 class="font-bold text-4xl">Ashley Chan</h1>
+    <h1 class="font-bold text-6xl md:text-4xl">Ashley Chan</h1>
   </a>
 
-  <ul class="flex flex-wrap items-center space-x-8 py-5">
+  <ul class="flex flex-wrap items-center space-x-8 py-7 text-lg">
     {
       Object.keys(pages).map((pg) => {
         if (Astro.url.pathname === pg) {
           return (
             <li>
-              <a class="active font-semibold text-lg" href="#">
+              <a class="active font-semibold" href="#">
                 {pages[pg]}
               </a>
             </li>
@@ -27,9 +26,7 @@ console.log(Astro.url.pathname);
         } else {
           return (
             <li>
-              <a class="text-lg" href={pg}>
-                {pages[pg]}
-              </a>
+              <a href={pg}>{pages[pg]}</a>
             </li>
           );
         }
