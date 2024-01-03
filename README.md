@@ -21,10 +21,20 @@ In my free time, I love to tinker with new technologies, go to the gym, and expl
    npm i
    ```
 
+   or 
+
+   ```bash
+   bun i
+   ```
+
 2. Run
 
    ```bash
    npm run dev
+   ```
+
+   ```bash
+   bun run dev
    ```
 
 [Return to Top](#)
